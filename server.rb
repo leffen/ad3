@@ -7,5 +7,5 @@ end
 
 get '/api/data' do
   content_type :json
-  File.read('data/data2.json')
+  File.read('data/data.json')
 end
