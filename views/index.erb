@@ -20,7 +20,6 @@
     <div class="row chart">
       <nvd3-line-chart
       data="info.data"
-      id="r2_graph"
       showXAxis="true"
       showYAxis="true"
       tooltips="true"
@@ -28,9 +27,18 @@
       yAxisTickFormat="yAxisTickFormatFunction()"
       interactive="true"
       color="infoColor()"
+      tooltipContent="infoTooltip()"
+      callback="callback()"
       >
       </nvd3-line-chart>
 
+    </div>
+
+    <div class="row" ng-hide="!info.asset_id">
+      <h1>Asset {{info.asset_id}}</h1>
+      <p>Server: {{info.server}}</p>
+      <p>Format: {{info.format}}</p>
+      <p>Lengde(s): {{info.lengde}}</p>
     </div>
   </div>
 </div>
