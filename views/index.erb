@@ -10,35 +10,46 @@
 </head>
 <body>
 <div class="jumbotron">
-  <h1>Angular & D3</h1>
+  <h1>Transkoder info</h1>
 </div>
 
 <div class="container" ng-controller="MainController">
 
   <div class="well"><h1>{{info.title}}</h1>
 
-    <div class="row chart">
-      <nvd3-line-chart
-      data="info.data"
-      showXAxis="true"
-      showYAxis="true"
-      tooltips="true"
-      xAxisTickFormat="xAxisTickFormatFunction()"
-      yAxisTickFormat="yAxisTickFormatFunction()"
-      interactive="true"
-      color="infoColor()"
-      tooltipContent="infoTooltip()"
-      callback="callback()"
-      >
-      </nvd3-line-chart>
+    <div class="row">
 
-    </div>
+      <div class="col-md-8 ">
+        <article class="chart">
 
-    <div class="row" ng-hide="!info.asset_id">
-      <h1>Asset {{info.asset_id}}</h1>
-      <p>Server: {{info.server}}</p>
-      <p>Format: {{info.format}}</p>
-      <p>Lengde(s): {{info.lengde}}</p>
+        <nvd3-line-chart
+        data="info.data"
+        showXAxis="true"
+        showYAxis="true"
+        tooltips="true"
+        xAxisTickFormat="xAxisTickFormatFunction()"
+        yAxisTickFormat="yAxisTickFormatFunction()"
+        interactive="true"
+        color="infoColor()"
+        tooltipContent="infoTooltip()"
+        callback="callback()"
+        >
+        </nvd3-line-chart>
+        </article>
+      </div>
+
+      <div class="col-md-4">
+
+        <div ng-hide="!info.asset_id">
+          <h1>Asset {{info.asset_id}}</h1>
+
+          <p>Server: {{info.server}}</p>
+
+          <p>Format: {{info.format}}</p>
+
+          <p>Lengde(s): {{info.lengde}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
